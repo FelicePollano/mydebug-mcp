@@ -14,7 +14,7 @@ internal class Program
 
         builder.Services.AddSingleton<VisualStudioService>();
         builder.Services
-            .AddMcpServer()
+            .AddMcpServer(o => o.ServerInstructions = VisualStudioTools.ServerInstructions)
             .WithHttpTransport()
             .WithTools<VisualStudioTools>();
 
